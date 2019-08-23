@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>TechRoad</TITLE>
+		<META charset="UTF-8">
+		<META name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<LINK rel="stylesheet" href="css/index.css">
+		<LINK rel="stylesheet" href="css/animate.css">
+		<LINK rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+		<LINK rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Monoton|Unica+One">
+		<LINK rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<LINK rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<LINK rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share">
+		<LINK rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	    <LINK rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<SCRIPT src="js/wow.min.js"></SCRIPT>
+		<SCRIPT src="js/jquery.visible.js"></SCRIPT>
+		<SCRIPT src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></SCRIPT>
+		<SCRIPT src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></SCRIPT>
+		<SCRIPT src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></SCRIPT>
+        <SCRIPT>
+          	new WOW().init();
+        </SCRIPT>
+		<STYLE>
+			.loader{
+				position:fixed;
+				z-index:99;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height:100%;
+				background:#000;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.loader>img{
+				width:100px;
+			}
+			.loader.hidden{animation:fadeOut 1s;
+				animation-fill-mode: forwards;
+			}
+			@keyframes fadeOut{
+				100%{
+					opacity: 0;
+					visibility:hidden;
+				}
+			}
+			body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+			body, html {
+	    		height: 100%;
+	    		line-height: 1.8;
+			}
+			.bar .button {
+	    		padding: 16px;
+			}
+		</STYLE>
+		<SCRIPT>
+			$(document).ready(function() {
+				$(window).scroll(function() {
+	  				if($(this).scrollTop() > 300) {
+		  				$('.navbar').addClass('black');
+	  				} else {
+		  				$('.navbar').removeClass('black');
+	  				}
+				});
+			});
+		</SCRIPT>
+		<SCRIPT>
+			var nav = document.getElementById('navBar');
+			if($('footer').visible(true))
+				nav.style.display="none";
+			else
+				nav.style.display="block";
+		</SCRIPT>
+		<SCRIPT>
+			jQuery(
+				function($){
+					$('#contact').bind('scroll', function(){
+						if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight)
+							alert('end reached');
+					})
+				}
+			);
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<div class="loader hidden">
+			<img src="images/loader.gif" alt="Loading......"/>
+		</div>
+
+		<!-- Navbar (sit on top) -->
+		<DIV class="top" id="navBar">
+			<DIV class="bar card navbar" id="myNavbar" style="padding-top:10px;color:white;">
+				<NAV class="effect-21"><B><A href="index.html" class="bar-item wide" style="font-size:22px;"><IMG src="images/logo.png" style="height:60px;"/></A></B></NAV>
+		    	<!-- Right-sided navbar links -->
+		    	<DIV class="right hide-small" style="font-size:19px">
+					<A href="#about" class="bar-item button">About</A>
+					<A href="timeline.html" class="bar-item button"><I class="fa fa-tasks"></I> Procedure</A>
+					<!--<A href="#work" class="bar-item button"><I class="fa fa-th"></I> Portfolio</A>-->
+					<A href="#services" class="bar-item button"><I class="fa fa-briefcase"></I> Services</A>
+					<!--<A href="#reviews" class="bar-item button"><I class="fa fa-star"></I> Testimonials</A>-->
+					<A href="faq.html" class="bar-item button"><i class="fa fa-question-circle" aria-hidden="true"></i> FAQs</A>
+					<A href="#contact" class="bar-item button"><I class="fa fa-envelope"></I> Contact</A>
+				</DIV>
+				<!-- Hide right-floated links on small screens and replace them with a menu icon -->
+				<A href="javascript:void(0)" class="bar-item button right hide-large hide-medium" onclick="w3_open()">
+					<I class="fa fa-bars"></I>
+		    	</A>
+			</DIV>
+		</DIV>
+
+		<!-- Sidebar on small screens when clicking the menu icon -->
+		<NAV class="sidebar bar-block black card animate-left hide-medium hide-large" style="display:none" id="mySidebar">
+			<A href="javascript:void(0)" onclick="w3_close()" class="bar-item button large padding-16">Close &times;</A>
+			<A href="#about" onclick="w3_close()" class="bar-item button">About</A>
+			<A href="timeline.html" onclick="w3_close()" class="bar-item button">Procedure</A>
+			<!--<A href="#work" onclick="w3_close()" class="bar-item button">Portfolio</A>-->
+			<A href="#services" onclick="w3_close()" class="bar-item button">Services</A>
+			<!--<A href="#reviews" onclick="w3_close()" class="bar-item button">Testimonials</A>-->
+			<A href="faq.html" onclick="w3_close()" class="bar-item button">FAQs</A>
+			<A href="#contact" onclick="w3_close()" class="bar-item button">Contact</A>
+		</NAV>
+
+		<!-- landing container -->
+		<DIV class="container" id="home" style="height:100%;background-color:#2196F3;color:black">
+			<DIV class="bg-img" style="z-index:0;"></DIV>
+			<TABLE style="height:100%;width:100%;z-index:1" border="0">
+				<TR style="height:100%">
+					<TD style="width:50%">
+						<CENTER>
+							<H1 style="font-family: 'Comfortaa', cursive;">TechRoad</H1>
+							<H3 style="font-family: 'Unica One', cursive;"><I>Driven by perfection, lead by innovation</I></H3>
+						</CENTER>
+					</TD>
+				</TR>
+			</TABLE>
+		</DIV>
+
+		<DIV class="container" style="padding:128px 16px;background-color:#E7FF8C;color:black" id="about">
+			<H2 class="center" style="font-family:'Share', cursive;">ABOUT THE COMPANY</H2>
+			<DIV class="row-padding center" style="margin-top:64px;">
+				<DIV class="quarter wow fadeIn">
+					<I class="fa fa-heart margin-bottom jumbo"></I>
+					<P class="xlarge">Long-Term</P>
+					<P class="large">We trust in forging a long-term qualified association with clients and see to it that, our first project does not become the last one!</P>
+				</DIV>
+				<DIV class="quarter wow fadeIn" style="animation-delay:.15s">
+					<I class="fa fa-cog margin-bottom jumbo"></I>
+					<P class="xlarge">Innovation</P>
+					<P class="large">We at TechRoad aim at  making an innovative and meticulous Mobile and Web Application for our customers emphasizing on micro details and making your experience “Marvelous”.</P>
+				</DIV>
+				<DIV class="quarter wow fadeIn" style="animation-delay:.15s">
+					<I class="fa fa-diamond margin-bottom jumbo"></I>
+					<P class="xlarge">Interface</P>
+					<P class="large">As design and user interface are the first thing that makes an impact on the customer, we understand this and implement them meritoriously.</P>
+				</DIV>
+				<DIV class="quarter wow fadeIn">
+					<I class="fa fa-desktop margin-bottom jumbo center"></I>
+					<P class="xlarge">Technology</P>
+					<P class="large">We work to craft solutions that leverage cutting-edge technology, from ideation to development and delivery.</P>
+		    	</DIV>
+		  	</DIV>
+		</DIV>
+
+		<!-- Services Section -->
+		<DIV class="container white padding-32" style="height:100%" id="services">
+		  	<H2 class="center" style="font-family:'Share', cursive;">SERVICES</H2>
+	  		<DIV class="row-padding" style="margin-top:20px;width:100%">
+				<TABLE style="width:100%">
+					<TR>
+						<TD>
+				    		<DIV class="col half" style="height:100%;width:100%">
+				    			<DIV class="card">
+									<CENTER>
+				    				<IMG class="center" src="images/design.jpg" alt="Web Development" style="width:50%">
+				    				<DIV class="container">
+				    					<H3>Web Development</H3>
+				       					<!--<P>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</P>-->
+				       					<P><BUTTON class="button light-grey block"><I class="fa fa-search" aria-hidden="true"></I> Explore</BUTTON></P>
+				       				</DIV>
+								</CENTER>
+				     			</DIV>
+				    		</DIV>
+						</TD>
+					</TR>
+					<TR style="height:20px;"></TR>
+					<TR>
+						<TD>
+				    		<DIV class="col half" style="height:100%;width:100%">
+				     			<DIV class="card" style="height:100%">
+									<CENTER>
+				       				<IMG src="images/design2.png" alt="Mobile Development" style="width:50%">
+				       				<DIV class="container">
+				       					<H3>Mobile Development</H3>
+				       					<!--<P>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</P>-->
+				       					<P><BUTTON class="button light-grey block"><I class="fa fa-search" aria-hidden="true"></I> Explore</BUTTON></P>
+				       				</DIV>
+								</CENTER>
+				    			</DIV>
+				    		</DIV>
+						</TD>
+					</TR>
+				</TABLE>
+			</DIV>
+		</DIV>
+
+		<!-- Promo Section "Statistics" -
+		<DIV class="container row center dark-grey padding-64">
+			<DIV class="quarter">
+		    	<SPAN class="xxlarge">14+</SPAN>
+		    	<BR>Partners
+		  	</DIV>
+		  	<DIV class="quarter">
+		    	<SPAN class="xxlarge">55+</SPAN>
+		    	<BR>Projects Done
+		  	</DIV>
+		  	<DIV class="quarter">
+		    	<SPAN class="xxlarge">89+</SPAN>
+		    	<BR>Happy Clients
+		  	</DIV>
+		  	<DIV class="quarter">
+		    	<SPAN class="xxlarge">150+</SPAN>
+		    	<BR>Meetings
+		  	</DIV>
+		</DIV>
+
+		<!- Work Section -
+		<DIV class="container" style="padding:128px 16px" id="work">
+		  	<H3 class="center">OUR WORK</H3>
+		  	<P class="center large">What we've done</P>
+
+		  	<DIV class="row-padding" style="margin-top:64px">
+		    	<DIV class="col l3 m6">
+		      		<IMG src="images/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="A microphone">
+		    	</DIV>
+		    	<DIV class="col l3 m6">
+		      		<IMG src="images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="A phone">
+		    	</DIV>
+		    	<DIV class="col l3 m6">
+		      		<IMG src="images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="A drone">
+		    	</DIV>
+		    	<DIV class="col l3 m6">
+		      		<IMG src="images/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="Soundbox">
+		    	</DIV>
+		  	</DIV>
+
+		  	<DIV class="row-padding section">
+		    	<DIV class="col l3 m6">
+		      		<IMG src="images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="A tablet">
+		    	</DIV>
+		    	<DIV class="col l3 m6">
+		      		<IMG src="images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="A camera">
+		    	</DIV>
+		    	<DIV class="col l3 m6">
+		      		<IMG src="images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="A typewriter">
+		    	</DIV>
+		    	<DIV class="col l3 m6">
+		      		<IMG src="images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="A tableturner">
+		    	</DIV>
+		  	</DIV>
+		</DIV>
+
+		<!- Modal for full size images on click-
+		<DIV id="modal01" class="modal black" onclick="this.style.display='none'">
+		  	<SPAN class="button xxlarge black padding-large display-topright" title="Close Modal Image">&times;</SPAN>
+		  	<DIV class="modal-content animate-zoom center transparent padding-64">
+		    	<IMG id="img01" class="image">
+		    	<P id="caption" class="opacity large"></P>
+		  	</DIV>
+		</DIV>
+
+		<!- Skills Section -
+		<DIV class="container light-grey padding-64">
+		  	<DIV class="row-padding">
+		    	<DIV class="col m6">
+		      		<H3>Our Skills.</H3>
+		      		<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<BR>
+		      			tempor incididunt ut labore et dolore.</P>
+		      		<P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<BR>
+		      			tempor incididunt ut labore et dolore.</P>
+		    	</DIV>
+		    	<DIV class="col m6">
+					<P class="wide"><I class="fa fa-desktop margin-right"></I>Web Design</P>
+					<DIV class="grey">
+				  		<DIV class="container dark-grey center" style="width:90%">90%</DIV>
+					</DIV>
+		      		<P class="wide"><I class="fa fa-camera margin-right"></I>Photography</P>
+		      		<DIV class="grey">
+		        		<DIV class="container dark-grey center" style="width:85%">85%</DIV>
+		      		</DIV>
+		      		<P class="wide"><I class="fa fa-photo margin-right"></I>Photoshop</P>
+		      		<DIV class="grey">
+		        		<DIV class="container dark-grey center" style="width:75%">75%</DIV>
+		      		</DIV>
+		    	</DIV>
+		  	</DIV>
+		</DIV>
+
+		<!- Pricing Section -
+		<DIV class="container center dark-grey" style="padding:128px 16px" id="services">
+		  <H3>OUR SERVICES</H3>
+		  <DIV class="row-padding" style="margin-top:64px">
+
+		    <DIV class="third">
+		      <UL class="ul white hover-shadow">
+		        <LI class="red xlarge padding-48">Pro</LI>
+		        <LI class="padding-16"><b>25GB</b> Storage</LI>
+		        <LI class="padding-16"><b>25</b> Emails</LI>
+		        <LI class="padding-16"><b>25</b> Domains</LI>
+		        <LI class="padding-16"><b>Endless</b> Support</LI>
+		        <LI class="padding-16">
+		          <H2 class="wide">$ 25</H2>
+		          <SPAN class="opacity">per month</SPAN>
+		        </LI>
+		        <LI class="dark-grey padding-24">
+		          <BUTTON class="button black padding-large">Sign Up</BUTTON>
+		        </LI>
+		      </UL>
+		    </DIV>
+		</DIV>
+	</DIV>
+
+		<!- Reviews Section -
+		<DIV class="container center light-grey" style="padding:128px 16px" id="reviews">
+		  <H3>REVIEWS</H3>
+		  <DIV class="row-padding" style="margin-top:64px">
+		    <DIV class="third section">
+		      <UL class="ul white hover-shadow">
+		        <LI class="black xlarge padding-32">Basic</LI>
+		        <LI class="padding-16"><b>10GB</b> Storage</LI>
+		        <LI class="padding-16"><b>10</b> Emails</LI>
+		        <LI class="padding-16"><b>10</b> Domains</LI>
+		        <LI class="padding-16"><b>Endless</b> Support</LI>
+		        <LI class="padding-16">
+		          <H2 class="wide">$ 10</H2>
+		          <SPAN class="opacity">per month</SPAN>
+		        </LI>
+		        <LI class="light-grey padding-24">
+		          <BUTTON class="button black padding-large">Sign Up</BUTTON>
+		        </LI>
+		      </UL>
+		    </DIV>
+		</DIV>
+	</DIV>
+
+		<!- Contact Section -
+		<DIV class="container dark-grey" style="padding:128px 16px" id="contact">
+		  <H3 class="center">CONTACT</H3>
+		  <P class="center large">Lets get in touch. Send us a message:</P>
+		  <DIV style="margin-top:48px">
+		    <P><I class="fa fa-map-marker fa-fw xxlarge margin-right"></I> Noida, INDIA</P>
+		    <P><I class="fa fa-phone fa-fw xxlarge margin-right"></I> Phone: +91 151515</P>
+		    <P><I class="fa fa-envelope fa-fw xxlarge margin-right"> </I> Email: mail@mail.com</P>
+		    <BR>
+		    <form action="/action_page.php" target="_blank">
+		      <P><Input class="input border" type="text" placeholder="Name" required name="Name"></P>
+		      <P><Input class="input border" type="text" placeholder="Email" required name="Email"></P>
+		      <P><Input class="input border" type="text" placeholder="Subject" required name="Subject"></P>
+		      <P><Input class="input border" type="text" placeholder="Message" required name="Message"></P>
+		      <P>
+		        <BUTTON class="button black" type="submit">
+		          <I class="fa fa-paper-plane"></I> SEND MESSAGE
+		        </BUTTON>
+		      </P>
+		    </form>
+		  </DIV>
+		</DIV>-->
+	  	<DIV class="container black padding-32" id="contact">
+		  	<DIV class="row">
+			  	<DIV class="container third">
+			 		<H5 class="bottombar border-blue">CONTACT US</H5>
+			  		<A href="mailto:asktechroad@gmail.com?" style="text-decoration:none"><P><i class="fa fa-envelope" aria-hidden="true"></i> Let's get in touch</P></A>
+			  	</DIV>
+		  	<DIV class="container third">
+					<H5 class="bottombar border-orange">ABOUT US</H5>
+					<A href="timeline.html" style="text-decoration:none"><P>Procedure</P></A>
+					<!--<A href="#work" style="text-decoration:none"><P>Portfolio</P></A>-->
+		  	</DIV>
+			  	<DIV class="container third">
+				  	<H5 class="bottombar border-pink">SERVICES</H5>
+				  	<A href="#services" style="text-decoration:none"><P>Services</P></A>
+				  	<A href="faq.html" style="text-decoration:none"><P>FAQs</P></A>
+			  	</DIV>
+		  	</DIV>
+	  	</DIV>
+
+	  	<!-- Footer -->
+	  	<FOOTER class="container padding-16 black">
+			<CENTER>
+			  	<H4>Developed By,</H4>
+				<IMG src="images/logo.png" style="height:100px;">
+			  	<P>TechRoad</P>
+			</CENTER>
+	  	</FOOTER>
+
+		<SCRIPT>
+			// Modal Image Gallery
+			function onClick(element) {
+		  		document.getElementById("img01").src = element.src;
+		  		document.getElementById("modal01").style.display = "block";
+		  		var captionText = document.getElementById("caption");
+		  		captionText.innerHTML = element.alt;
+			}
+
+			// Toggle between showing and hiding the sidebar when clicking the menu icon
+			var mySidebar = document.getElementById("mySidebar");
+
+			function w3_open() {
+		    	if (mySidebar.style.display === 'block') {
+		        	mySidebar.style.display = 'none';
+		    	} else {
+		        	mySidebar.style.display = 'block';
+		    	}
+			}
+
+			// Close the sidebar with the close button
+			function w3_close() {
+		    	mySidebar.style.display = "none";
+			}
+		</SCRIPT>
+	</BODY>
+</HTML>
